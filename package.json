@@ -1,0 +1,50 @@
+{
+	"name": "sveltekit-extension-template",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "pnpm build-dev && run-p run:chrome watch",
+		"build-dev": "vite build --mode development && pnpm build-content-script && pnpm build-service-worker && pnpm build-content-css",
+		"watch": "watch 'pnpm build' src static",
+		"build": "vite build && && pnpm build-content-script && pnpm build-service-worker && pnpm build-content-css",
+		"build-service-worker": "esbuild src/service-worker.ts --bundle --minify --outdir=build",
+		"build-content-script": "esbuild src/content.ts --bundle --minify --outdir=build",
+		"build-content-css": "esbuild src/content.css --bundle --minify --outdir=build",
+		"preview": "vite preview",
+		"run:chrome": "web-ext run -t chromium -s build",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"test:unit": "vitest",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.1.0",
+		"@sveltejs/kit": "^1.25.2",
+		"@types/chrome": "^0.0.247",
+		"@typescript-eslint/eslint-plugin": "^6.8.0",
+		"@typescript-eslint/parser": "^6.8.0",
+		"autoprefixer": "^10.4.16",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-svelte": "^2.34.0",
+		"highlight.js": "^11.9.0",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.31",
+		"prettier": "^3.0.3",
+		"prettier-plugin-svelte": "^3.0.3",
+		"svelte": "^4.2.1",
+		"svelte-check": "^3.5.2",
+		"sveltekit-adapter-chrome-extension": "^2.0.0",
+		"tailwindcss": "^3.3.3",
+		"tslib": "^2.6.2",
+		"typescript": "^5.2.2",
+		"vite": "^4.4.11",
+		"vitest": "^0.34.6",
+		"watch": "^1.0.2"
+	},
+	"type": "module",
+	"dependencies": {
+		"rollup-plugin-import-css": "^3.5.0"
+	}
+}

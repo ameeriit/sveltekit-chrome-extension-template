@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"typeRoots": ["./node_modules/@types", "./src/types"],
+		"types": ["chrome"]
+	},
+	"include": ["types/chrome-extensions.d.ts"]
+}
