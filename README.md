@@ -40,5 +40,3 @@ Once you've developed your extension, follow these steps to install it in your b
 We welcome contributions of all kinds! Whether you have ideas for new features, bug fixes, or improvements to the documentation, we'd love to hear from you. Please submit a pull request with your changes, and we'll review it as soon as possible.
 
 This should provide clear instructions for users to follow when setting up template.
-
-# sveltekit-chrome-extension-template
